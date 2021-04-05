@@ -7,14 +7,14 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class KlasyComponent implements OnInit {
 
-  test = 'dziedziczony element';
+  test = 'klasy.component';
   
   constructor() {
 
   }
 
   ngOnInit(): void {
-
+    this.getTest();
   }
 
   getTest() {

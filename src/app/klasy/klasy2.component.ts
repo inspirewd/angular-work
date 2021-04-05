@@ -12,6 +12,10 @@ export class Klasy2Component extends KlasyComponent implements OnInit { // dekla
     super(); // odwołujemy się poprzez super() do konstruktora klasy bazowej
   }
 
+  getTest() {
+      console.log(`klasy2.component`);
+  }
+
   ngOnInit(): void {
     this.getTest(); // możemy wywołać metody klasy bazowej
   }
