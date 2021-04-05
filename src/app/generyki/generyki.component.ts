@@ -23,6 +23,9 @@ export class GenerykiComponent implements OnInit {
     console.log(this.echo2('echoooo'));
 
 
+
+    
+
     let test = this.echo(1); // rozpoznaje typ number dzięki typowy generycznemu: 
     let test2 = this.echo2(1); // bez deklaracji typu gen. rozpoznaje typ jako any
   }
