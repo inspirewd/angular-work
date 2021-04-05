@@ -10,6 +10,7 @@ import { RestApiModule } from './restapi/restapi.module';
 import { KlasyModule } from './klasy/klasy.module';
 import { InterfejsyComponent } from './interfejsy/interfejsy.component';
 import { GenerykiComponent } from './generyki/generyki.component';
+import { DiModule } from './di/di.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GenerykiComponent } from './generyki/generyki.component';
     BrowserModule,
     ViewModule, 
     RestApiModule,
-    KlasyModule
+    KlasyModule,
+    DiModule
   ],
   providers: [
     DataService,
