@@ -17,6 +17,7 @@ export class ChildComponent implements OnInit {
     // this.data = this.dataService.getData();
     this.dataService.printToConsole('test');
     console.log("test");
+    console.log("dev");
     
   }
 
