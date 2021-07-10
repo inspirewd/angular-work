@@ -11,6 +11,7 @@ import { KlasyModule } from './klasy/klasy.module';
 import { InterfejsyComponent } from './interfejsy/interfejsy.component';
 import { GenerykiComponent } from './generyki/generyki.component';
 import { DiModule } from './di/di.module';
+import { MasterComponentComponent } from './master-component/master-component.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DiModule } from './di/di.module';
     ChildComponent,
     InterfejsyComponent,
     GenerykiComponent,
+    MasterComponentComponent,
   ],
   imports: [
     BrowserModule,
