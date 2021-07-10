@@ -16,6 +16,10 @@ export class ChildComponent implements OnInit {
   ngOnInit(): void {
     // this.data = this.dataService.getData();
     this.dataService.printToConsole('test');
+    console.log("test");
+    
   }
+
+  
 
 }
