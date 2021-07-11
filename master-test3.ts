@@ -1,3 +1,4 @@
 master-test2.ts
 
-dev conflict
+master conflict
+dev conflict3
