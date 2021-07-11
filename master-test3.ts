@@ -1,4 +1,3 @@
 master-test2.ts
 
-master conflict
-dev conflict3
+master conflict change merge
