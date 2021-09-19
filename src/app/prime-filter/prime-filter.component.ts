@@ -45,15 +45,16 @@ export class PrimeFilterComponent implements OnInit {
       { field: "year", header: "Year", filter: "year" },
       { field: "brand", header: "Brand", filter: "brand" },
       { field: "color", header: "Color", filter: "color" },
-      { field: "vin", header: "Vin", filter: "vin" }
+      { field: "isDeleted", header: "Status", filter: "isDeleted" }
     ];
 
     this.matchModeOptions = [
-      { label: "Custom Equals", value: customFilterName },
+      // { label: "Custom Equals", value: customFilterName },
       { label: "Starts With", value: FilterMatchMode.STARTS_WITH },
       { label: "Contains", value: FilterMatchMode.CONTAINS }
     ];
 
     this.carService.getCarsMedium().then(cars => (this.cars = cars));
+    
   }
 }
