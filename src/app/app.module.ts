@@ -12,6 +12,10 @@ import { InterfejsyComponent } from './interfejsy/interfejsy.component';
 import { GenerykiComponent } from './generyki/generyki.component';
 import { DiModule } from './di/di.module';
 import { MasterComponentComponent } from './master-component/master-component.component';
+import { PrimeFilterComponent } from './prime-filter/prime-filter.component';
+import {TableModule} from 'primeng/table';
+import { CarService } from './prime-filter/carservice';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,19 +24,24 @@ import { MasterComponentComponent } from './master-component/master-component.co
     InterfejsyComponent,
     GenerykiComponent,
     MasterComponentComponent,
+    PrimeFilterComponent,
+
   ],
   imports: [
     BrowserModule,
     ViewModule, 
     RestApiModule,
     KlasyModule,
-    DiModule
+    DiModule,
+    TableModule,
+    BrowserAnimationsModule
   ],
   providers: [
     DataService,
     {
       provide: 'SampleData', useValue: sampleData
-    }
+    },
+    CarService
   ],
   bootstrap: [AppComponent]
 })

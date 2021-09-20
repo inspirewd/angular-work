@@ -1,0 +1,27 @@
+<p-table #dt [columns]="cols" [value]="cars" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+        <tr>
+            <th *ngFor="let col of columns">
+                <!-- {{ col | json }} -->
+                <p-columnFilter *ngIf="col.filter === 'isDeleted'; else elseBlock" type="boolean" display="menu" [field]="col.filter" [matchModeOptions]="matchModeOptions" [matchMode]="'custom-equals'"></p-columnFilter>
+                <ng-template #elseBlock><p-columnFilter type="text" [field]="col.filter" [matchModeOptions]="matchModeOptions" [matchMode]="'custom-equals'"></p-columnFilter></ng-template>
+
+                <!-- <p-columnFilter type="boolean" display="menu" [field]="col.filter" [matchModeOptions]="matchModeOptions" [matchMode]="'custom-equals'"></p-columnFilter> -->
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+            <td *ngFor="let col of columns">
+                <!-- {{col.field}}
+                {{ rowData | json }} -->
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
