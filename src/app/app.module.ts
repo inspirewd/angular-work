@@ -16,6 +16,8 @@ import { PrimeFilterComponent } from './prime-filter/prime-filter.component';
 import {TableModule} from 'primeng/table';
 import { CarService } from './prime-filter/carservice';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RxjsComponent } from './rxjs/rxjs.component';
+import { RxjsService } from './rxjs/rxjs.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GenerykiComponent,
     MasterComponentComponent,
     PrimeFilterComponent,
-
+    RxjsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     {
       provide: 'SampleData', useValue: sampleData
     },
-    CarService
+    CarService,
+    RxjsService
   ],
   bootstrap: [AppComponent]
 })
