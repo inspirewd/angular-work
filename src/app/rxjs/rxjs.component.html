@@ -1,7 +1,7 @@
 <p>rxjs works!</p>
 
-<input (input)="search($any($event.target).value)">
+<input (input)="name$.next($any($event.target).value)">
 
 <ul>
-    <li *ngFor="let character of characters">{{ character.name }}</li>
+    <li *ngFor="let character of characters$ | async; trackBy: identifyCharacter">{{ character.name }}</li>
 </ul>

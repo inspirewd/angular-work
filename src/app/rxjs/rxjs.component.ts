@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { RxjsService } from './rxjs.service';
 
 export interface Character {
@@ -11,23 +12,18 @@ export interface Character {
   templateUrl: './rxjs.component.html',
   styleUrls: ['./rxjs.component.scss']
 })
-export class RxjsComponent implements OnInit {
+export class RxjsComponent {
 
-  public characters: Array<Character> = [];
+  public characters$: Observable<Array<Character>>;
+  public name$ = new Subject<string>(); // subject do specjalny typ observabla, który pozwala multicastować wartości do wielu observerów
 
-  constructor(private rxjsService: RxjsService) { }
-
-  ngOnInit(): void {
-    // this.search("rick");
+  constructor(private rxjsService: RxjsService) {
+    this.characters$ = this.rxjsService.search(this.name$);
   }
 
-  public search(name: string): void {
-    // console.log("search()");
-    this.rxjsService.search(name).subscribe(
-      characters => {
-        // console.log(characters);
-        return this.characters = characters
-      }) 
+  // funkcja do trackBy, dzięki której rozpoznajemy po id, który element w strumieniu uległ zmianie
+  public identifyCharacter(character: any): number {
+    return character.id;
   }
 
 }

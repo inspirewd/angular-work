@@ -20,12 +20,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "strictPropertyInitialization": false
+    /* dzięki temu pozbywamy się errora: Property '...' has no initializer and is not definitely assigned in the constructor
+    https://stackoverflow.com/questions/49699067/property-has-no-initializer-and-is-not-definitely-assigned-in-the-construc
+    */
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
+    "strictTemplates": true,
+    "strictPropertyInitialization": false
+    /* dzięki temu pozbywamy się errora: Property '...' has no initializer and is not definitely assigned in the constructor
+    https://stackoverflow.com/questions/49699067/property-has-no-initializer-and-is-not-definitely-assigned-in-the-construc
+    */
+  },
 }
